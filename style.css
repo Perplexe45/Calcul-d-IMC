@@ -1,0 +1,126 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  min-height: 100vh;
+  font-family: Lato, Helvetica, sans-serif;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  padding: clamp(20px, 5vw, 50px) 10px 10px;
+}
+
+.container {
+  max-width: 850px; /*max en largeur*/
+  background: #f1f1f1;
+  border: 1px solid #36363692;
+  padding: 25px;
+  margin: 0 auto; /*Centré si > 850px*/
+  border-radius: 5px; /*Arrondi du rectangle*/
+  box-shadow: 0 4px 5px rgba(0,0,0,0.3); /*Ombre de l'encadré*/
+}
+h1 {
+  font-family: Raleway, sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+h1 span {
+  font-weight: 700; /* "d'IMC" en gras*/
+}
+.inputs-container {
+  display: flex; /*met les inputs en ligne*/
+  justify-content: center; /*On les centre sur l'axe "X"*/
+}
+.inputs-container label { /*ils sont d'origine en line*/
+  display: block; /*Pour pouvoir les faire decendre un peu avec les marges*/
+  margin-bottom: 10px;  
+  margin-left: 5px;
+}
+.inputs-container input {
+  min-width: 350px; /*les champs de saisie sont de 350px au minimum*/
+  font-size: 18px; /*Taille de la police */
+  padding: 15px; /*Hauteur des champs de saisie --> input*/
+  border: none; /*Suppression des bordures*/
+  border-bottom: 1px solid #333333; /*1 trait sous les champs de saisie*/
+  box-shadow: 0 5px 5px rgba(0,0,0,0.3); /*Léger ombre des zones de saisie*/
+  border-radius: 5px;
+}
+.inputs-container input:focus {
+  outline: 1px solid #222222be; /*Lors de la tabulation, le champ est plus visible*/
+}
+.input-group:nth-child(2){ /*va agir sur le deuxième input*/
+  margin-left: 20px; /*le deuxième commencera 20px à partir de la gauche*/
+}
+
+form button {
+  font-size: 20px; /*Taille de la police*/
+  min-width: 200px; /*largeur du bouton*/
+  margin: 40px auto;
+  display: block; /*d'origine le bouton est inline-block --> pour le descendre et le centrer*/
+  padding: 10px;
+  border: none;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer; /*Pour qu'on puisse cliquer dessus*/
+  background: #fabe33; /*Couleur du bouton*/
+  box-shadow: 0 2px 3px rgba(0,0,0,0.5); /*ombre du bouton*/
+}
+form button:hover {
+  background: #f2b527; /*Bouton un peu plus foncé lors du clic*/
+}
+.info {
+  text-align: center; /*On centre la partie info*/
+}
+.bmi-value { /*Caractériqtique du "0"*/
+  font-size: 45px;
+  margin-bottom: 5px;
+  font-weight: bolder; /*bolder équivaut à 900 : (MAX)*/
+}
+.result {
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+}
+
+@media (max-width: 800px) { /*En dessous de 800px*/
+  .container {
+    max-width: 600px; /*On passe de 800px à 600px*/
+  }
+  .inputs-container {
+    flex-direction: column; /*Les inputs en dessous les uns des autres*/
+    align-items: center; /*On les centre*/
+  }
+  .input-group:nth-child(2) { /*L deuxième input*/
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  .input-group {
+    width: 100%;
+  }
+  .input-group input {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/*Pour les tout petits smartphones*/
+@media (max-width: 500px) { /*En dessous de 500px*/
+  .container {
+    max-width: 600px; /*On passe de 800px à 600px*/
+  }
+  .input-group {
+    width: 100%;
+  }
+ 
+  .input-group input {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
